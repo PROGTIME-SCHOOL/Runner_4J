@@ -1,0 +1,16 @@
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\bin\Debug\Runner_4J.exe.config
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\bin\Debug\Runner_4J.exe
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\bin\Debug\Runner_4J.pdb
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\Runner_4J.csproj.AssemblyReference.cache
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\Runner_4J.csproj.SuggestedBindingRedirects.cache
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\MainWindow.g.cs
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\App.g.cs
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\Runner_4J_MarkupCompile.cache
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\Runner_4J_MarkupCompile.lref
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\MainWindow.baml
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\Runner_4J.g.resources
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\Runner_4J.Properties.Resources.resources
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\Runner_4J.csproj.GenerateResource.cache
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\Runner_4J.csproj.CoreCompileInputs.cache
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\Runner_4J.exe
+C:\Users\viosagmir\source\repos\Runner_4J\Runner_4J\obj\Debug\Runner_4J.pdb
