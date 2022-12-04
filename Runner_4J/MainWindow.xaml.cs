@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -70,12 +71,30 @@ namespace Runner_4J
 
         private void myCanvas_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Key == Key.Enter && gameover)
+            {
+                // reset all
+                score = 0;
+                Canvas.SetLeft(obstacle, 1000);
+                scoreText.Content = "Score: " + score.ToString();
+                gameover = false;
 
+
+                StartGame();
+            }
         }
 
         private void myCanvas_KeyUp(object sender, KeyEventArgs e)
         {
+            if (e.Key == Key.Space && !jumping && Canvas.GetTop(player) > 250)
+            {
+                jumping = true;
+                force = 15;
+                speed = -10;
 
+                playerSprite.ImageSource = new BitmapImage(
+                new Uri("pack://application:,,,/images/pic2.gif"));
+            }
         }
 
         private void StartGame()
@@ -95,7 +114,7 @@ namespace Runner_4J
             if ((int)index > 0 && (int)index <= 8)
             {
                 playerSprite.ImageSource = new BitmapImage(
-                new Uri("pack://application:,,,/images/pic" + index + ".gif"));
+                new Uri("pack://application:,,,/images/pic" + (int)index + ".gif"));
 
                 player.Fill = playerSprite;
             }
@@ -136,6 +155,66 @@ namespace Runner_4J
                 }
 
                 RunSprite(spriteInt);
+            }
+
+            
+            if (playerHitBox.IntersectsWith(obstacleHitBox))
+            {
+                gameover = true;
+                gameTimer.Stop();
+            }
+
+            // jumping
+            if (jumping)
+            {
+                force--;
+                speed = -9;
+            }
+            else
+            {
+                speed = 12;
+            }
+
+            if (force < 0)
+            {
+                jumping = false;
+            }
+
+            // background
+            if (Canvas.GetLeft(background) < -1262)
+            {
+                Canvas.SetLeft(background, Canvas.GetLeft(background2) + background2.Width);
+            }
+
+            if (Canvas.GetLeft(background2) < -1262)
+            {
+                Canvas.SetLeft(background2, Canvas.GetLeft(background) + background.Width);
+            }
+
+            // obtacles
+            if (Canvas.GetLeft(obstacle) < -50)
+            {
+                Canvas.SetLeft(obstacle, 1000);   // random
+                Canvas.SetTop(obstacle, obstaclePosition[rand.Next(0, obstaclePosition.Length)]);
+
+                score++;
+            }
+
+            // gameover
+            if (gameover)
+            {
+                scoreText.Content = "Press Enter to Start game again";
+
+                obstacle.Stroke = Brushes.Black;
+                obstacle.StrokeThickness = 2;
+
+                player.Stroke = Brushes.Red;
+                player.StrokeThickness = 2;
+            }
+            else
+            {
+                obstacle.StrokeThickness = 0;
+                player.StrokeThickness = 0;
             }
         }
     }
